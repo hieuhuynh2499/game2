@@ -159,6 +159,7 @@ export default {
 <style scoped>
 .list-game {
   padding: 10px 0;
+  position: relative;
 }
 .list-game-top {
   display: flex;
@@ -169,7 +170,7 @@ export default {
 }
 .list-game-top h3 {
   font-family: Inter;
-  font-size: 20px;
+  font-size: clamp(12px, 0.7rem * 1vw, 18px);
   font-weight: 700;
   text-align: left;
   margin: 0;

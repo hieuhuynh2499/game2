@@ -31,7 +31,9 @@
             <button-component />
             <earth-icon />
           </div>
-
+          <div class="header-right-select">
+            <SelectMoney />
+          </div>
           <div>
             <sun-icon />
             <bell-icon />
@@ -45,6 +47,7 @@
 </template>
 <script>
 import ButtonComponent from "@/components/ButtonComponent.vue";
+import SelectMoney from "@/components/SelectMoney.vue";
 import SearchIcon from "@/icons/SearchIcon.vue";
 import SquareIcon from "@/icons/SquareIcon.vue";
 import EarthIcon from "@/icons/EarthIcon.vue";
@@ -56,6 +59,7 @@ export default {
   name: "HeaderComponent",
   components: {
     ButtonComponent,
+    SelectMoney,
     SearchIcon,
     SquareIcon,
     EarthIcon,
@@ -164,6 +168,11 @@ export default {
   margin-right: 10px;
   color: #fff;
 }
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
 .header-right div {
   display: flex;
   align-items: center;
@@ -196,6 +205,12 @@ export default {
 @media only screen and (max-width: 1200px) {
   .menu-search {
     display: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .header-right-select {
+    display: none !important;
   }
 }
 </style>
