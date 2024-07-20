@@ -35,7 +35,7 @@
             <SelectMoney />
           </div>
           <div>
-            <sun-icon />
+            <div v-on:click="changeMode"><sun-icon /></div>
             <bell-icon />
             <div class="avatar"><img src="@/assets/image.png" alt="" /></div>
             <earth-icon />
@@ -71,6 +71,7 @@ export default {
   props: {
     isShowMenu: Boolean,
     isShowMenuMobile: Boolean,
+    isChangeMode: Boolean,
   },
   methods: {
     toggleMenu() {
@@ -79,6 +80,18 @@ export default {
     toggleMenuMobile() {
       this.$emit("toggle-menu-mobile", this.isShowMenuMobile);
     },
+    changeMode() {
+      const mode = localStorage.getItem("mode");
+      if (mode === "dark") {
+        localStorage.setItem("mode", "light");
+      } else {
+        localStorage.setItem("mode", "dark");
+      }
+      this.$emit("toggle-change-mode", this.isChangeMode);
+    },
+  },
+  created() {
+    localStorage.setItem("mode", "dark");
   },
 };
 </script>
@@ -94,6 +107,7 @@ export default {
   height: 79px;
   padding: 0 30px;
   border-bottom: 0.4px solid #a6a6a6;
+  background: #161616;
 }
 
 .header-container {
@@ -188,6 +202,27 @@ export default {
 .header-right .avatar img {
   width: 100%;
   height: 100%;
+}
+
+.mode-light .header {
+  background: #eaf1ff;
+}
+
+.mode-light .header .header-center-main,
+.mode-light .header .header-center-right {
+  background: #fff;
+}
+
+.mode-light .header .header-center-btn {
+  color: #32373f;
+}
+
+.mode-light .header .header-center-btn-active {
+  color: #fff;
+}
+
+.mode-light .header .header-center-btn-active svg path {
+  fill: #fff;
 }
 
 @media only screen and (max-width: 1000px) {

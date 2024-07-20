@@ -144,6 +144,11 @@ export default {
   width: 40px;
   border-radius: 6px;
 }
+
+.mode-light .footer {
+  background-color: #e4eaf2;
+  color: #161616;
+}
 @media only screen and (max-width: 1000px) {
   .footer,
   .footer-right {

@@ -1,10 +1,12 @@
 <template>
-  <div>
+  <div :class="[isChangeMode ? 'mode-dark' : 'mode-light']">
     <HeaderComponent
       @toggle-menu="toggleMenu"
       @toggle-menu-mobile="toggleMenuMobile"
       :is-show-menu="isShowMenu"
       :is-show-menu-mobile="isShowMenuMobile"
+      @toggle-change-mode="toggleChangeMode"
+      :is-change-mode="isChangeMode"
     />
     <main class="main">
       <SideBar
@@ -73,12 +75,8 @@ export default {
     return {
       isShowMenu: false,
       isShowMenuMobile: false,
+      isChangeMode: false,
     };
-  },
-  computed: {
-    showMenuDesktop() {
-      return this.isShowMenu;
-    },
   },
   methods: {
     toggleMenu(value) {
@@ -86,6 +84,9 @@ export default {
     },
     toggleMenuMobile(value) {
       this.isShowMenuMobile = !value;
+    },
+    toggleChangeMode(value) {
+      this.isChangeMode = !value;
     },
   },
 };
@@ -96,7 +97,6 @@ export default {
 body {
   margin: 0;
   padding: 0;
-  background-color: #161616;
   font-family: Inter;
 }
 
@@ -182,8 +182,23 @@ ul {
   width: 100%;
   border-radius: 50%;
 }
+.mode-light {
+  background-color: #fff;
+}
 
-@media only screen and (max-width: 500px) {
+.mode-dark {
+  background-color: #161616;
+}
+
+.mode-light svg path {
+  fill: #6e7f9f;
+}
+
+.mode-light .header svg path {
+  fill: #32373f;
+}
+
+@media only screen and (max-width: 600px) {
   .mobile-controls {
     display: block;
   }

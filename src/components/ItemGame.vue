@@ -88,4 +88,8 @@ export default {
   width: 100%;
   color: #ffffff;
 }
+
+.mode-light .container-item-game .sub-title {
+  color: #161616;
+}
 </style>
