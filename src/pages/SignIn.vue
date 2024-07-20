@@ -228,6 +228,24 @@ a {
   border: none;
   color: #fff;
 }
+.mode-light .menu-search {
+  background: linear-gradient(180deg, #f2f6ff 0%, #e6eeff 100%);
+}
+.mode-light .menu-search .btn-menu-search {
+  color: #8399c1;
+}
+
+.mode-light .menu-search .btn-menu-search-active {
+  color: #fff;
+}
+
+.mode-light .menu-search .search-menu-search {
+  background-color: #fff;
+}
+
+.mode-light .menu-search .search-menu-search input {
+  color: #8399c1;
+}
 
 @media only screen and (max-width: 1000px) {
   .swiper-slide {

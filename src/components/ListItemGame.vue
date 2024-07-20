@@ -224,6 +224,14 @@ export default {
   width: 11.3% !important;
 }
 
+.mode-light .list-game .list-game-top h3 {
+  color: #161616;
+}
+
+.mode-light .list-game .container-item-game {
+  background-color: #ffffff;
+}
+
 @media only screen and (max-width: 1000px) {
   .swiper-slide {
     width: 19% !important;

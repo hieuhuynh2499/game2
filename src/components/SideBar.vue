@@ -357,6 +357,7 @@ export default {
   height: 46px;
   border-radius: 12px;
   background: #32373f;
+  cursor: pointer;
 }
 .menu-bottom {
   margin-top: 25px;
@@ -426,6 +427,55 @@ export default {
 .item-banner img {
   width: 100%;
   height: 100%;
+}
+
+.mode-light .menu {
+  background-color: #eaf1ff;
+  box-shadow: 4px 0px 12px 0px #2b2c2e1a;
+}
+
+.mode-light .menu .item-menu:hover {
+  background-color: #161616;
+}
+
+.mode-light .menu .menu-bottom .menu-bottom-two .item-menu:hover {
+  border-radius: 12px;
+}
+
+.mode-light .menu .item-menu:hover svg path {
+  fill: #fff;
+}
+
+.mode-light .show-menu {
+  background-color: #fff;
+  box-shadow: 4px 0px 12px 0px #2b2c2e1a;
+}
+.mode-light .show-menu .item-menu {
+  background-color: #eaf1ff;
+  color: #6e7f9f;
+}
+
+.mode-light .show-menu .item-menu-3 div {
+  background-color: #eaf1ff;
+}
+
+.mode-light .show-menu .item-menu:hover,
+.mode-light .show-menu .item-menu-2:hover {
+  background-color: #161616;
+  color: #fff;
+}
+
+.mode-light .show-menu .item-menu-3 div:hover {
+  background-color: #161616;
+}
+
+.mode-light .show-menu .item-menu:hover svg path,
+.mode-light .show-menu .item-menu-2:hover svg path {
+  fill: #fff;
+}
+
+.mode-light .show-menu .item-menu-3 div:hover svg path {
+  fill: #fff;
 }
 
 @media only screen and (max-width: 1000px) {
