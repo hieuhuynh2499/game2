@@ -19,6 +19,7 @@ export default {
   overflow: hidden;
   height: 164px;
   position: relative;
+  z-index: -1;
 }
 
 .item-banner img {

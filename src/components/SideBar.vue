@@ -69,6 +69,7 @@
 
     <div class="menu-mobile" :class="{ 'show-menu-mobile': isShowMenuMobile }">
       <div class="menu-mobile-top">
+        <SelectMoney />
         <div v-on:click="toggleMenuMobile" class="menu-mobile-top-right">
           <close-icon />
         </div>
@@ -135,6 +136,7 @@
   </div>
 </template>
 <script>
+import SelectMoney from "./SelectMoney.vue";
 import TimeIcon from "@/icons/TimeIcon.vue";
 import MoneyIcon from "@/icons/MoneyIcon.vue";
 import FriendIcon from "@/icons/FriendIcon.vue";
@@ -175,6 +177,7 @@ export default {
     FlowerIcon,
     TiviIcon,
     PhoneIcon,
+    SelectMoney,
   },
   props: {
     isShowMenu: Boolean,
@@ -407,7 +410,8 @@ export default {
 
 .menu-mobile-top {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 30px;
 }
 

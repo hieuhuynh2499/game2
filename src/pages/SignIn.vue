@@ -1,5 +1,12 @@
 <template>
   <div class="container">
+    <div class="mobile-search">
+      <div class="input-mobile-search">
+        <search-icon />
+        <input type="text" placeholder="Search" />
+      </div>
+      <button class="mobile-btn-search"><square-icon />Salão</button>
+    </div>
     <swiper class="swiper" :options="swiperOption">
       <swiper-slide><ItemBanner /></swiper-slide>
       <swiper-slide><ItemBanner /></swiper-slide>
@@ -147,7 +154,8 @@ a {
   align-items: center;
   margin: 30px 0;
 }
-.menu-search .btn-menu-search {
+.menu-search .btn-menu-search,
+.mobile-btn-search {
   display: flex;
   align-items: center;
   border-radius: 12px;
@@ -158,6 +166,7 @@ a {
   margin-right: 10px;
   color: #fff;
 }
+
 .menu-search .btn-menu-search:hover {
   background-color: #ff4848;
 }
@@ -189,6 +198,37 @@ a {
   outline: none;
 }
 
+.mobile-search {
+  display: none;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 10px 0;
+}
+
+.mobile-btn-search {
+  background-color: #ff4848;
+  margin: 0;
+  border: none;
+}
+.mobile-search .input-mobile-search {
+  border: none;
+  background: #a1b9e533;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  gap: 10px;
+  flex-grow: 1;
+  height: 44px;
+}
+
+.mobile-search .input-mobile-search input {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: #fff;
+}
+
 @media only screen and (max-width: 1000px) {
   .swiper-slide {
     width: 50% !important;
@@ -201,6 +241,10 @@ a {
 @media only screen and (max-width: 600px) {
   .swiper-slide {
     width: 100% !important;
+  }
+
+  .mobile-search {
+    display: flex;
   }
 }
 </style>
